@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
 import './App.css';
+import WithOk from './Conponents/WithOk'
+import WithError from './Conponents/WithError'
+import WithLoading from './Conponents/WithLoading'
 
 function App() {
+
+  const opts = {
+    initialData: [],
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <WithOk url='http://localhost:7070/data' opts={opts} />
+      <WithError url='http://localhost:7070/error' opts={opts} />
+      <WithLoading url='http://localhost:7070/loading' opts={opts} />
+    </Fragment>
   );
 }
 
