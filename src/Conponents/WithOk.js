@@ -9,7 +9,8 @@ function WithOk({ url, opts }) {
     return (
         <div>
             <h3>Ок</h3>
-            {loading && <p>Загрузка...</p> || error && <p>Ошибка: {error.message}</p> || data && <p>Данные: {data.status}</p>}
+            {loading && <p>Загрузка...</p>}
+            {data && <p>Данные: {data.status}</p>}
         </div>
     )
 }

@@ -9,7 +9,7 @@ function WithError({ url, opts }) {
     return (
         <div>
             <h3>Ошибка</h3>
-            {loading && <p>Загрузка...</p> || error && <p>Ошибка: {error.message}</p> || data && <p>Данные: {data.status}</p>}
+            {error && <p>Ошибка: {error.message}</p>}
         </div>
     )
 }
